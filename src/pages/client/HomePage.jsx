@@ -36,38 +36,52 @@ const destinations = [
 const HomePage = () => (
   <div>
     {/* Hero */}
-    <section className="relative h-[90vh] min-h-[600px] flex items-center">
+    <section className="relative h-[95vh] min-h-[700px] flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBeach} alt="Tropical paradise" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-foreground/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/60 to-transparent" />
       </div>
-      <div className="relative container mx-auto px-4">
+      <div className="relative container mx-auto px-6 pt-20">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl"
         >
-          <span className="inline-block bg-tropical-coral text-primary-foreground text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-            ✈ Singapore & Malaysia
-          </span>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
-            Discover Southeast Asia's Hidden Gems
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="inline-flex items-center gap-2 bg-background/20 backdrop-blur-md border border-background/20 text-primary-foreground text-sm font-semibold px-5 py-2 rounded-full mb-8 shadow-glow"
+          >
+            <span className="w-2 h-2 rounded-full bg-tropical-gold animate-pulse" />
+            Singapore & Malaysia
+          </motion.div>
+          
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-primary-foreground leading-[1.1] tracking-tight">
+            Discover <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-tropical-gold to-tropical-coral">
+              Southeast Asia's
+            </span>
+            <br/> Hidden Gems
           </h1>
-          <p className="text-primary-foreground/80 text-lg mt-6 max-w-lg leading-relaxed">
+          
+          <p className="text-primary-foreground/90 text-lg md:text-xl mt-8 max-w-xl leading-relaxed font-medium">
             Explore breathtaking landscapes, vibrant cultures, and unforgettable
-            experiences across Singapore and Malaysia.
+            experiences curated exclusively for you.
           </p>
-          <div className="flex flex-wrap gap-4 mt-8">
+          
+          <div className="flex flex-wrap gap-5 mt-10">
             <Link
               to="/packages"
-              className="bg-gradient-hero text-primary-foreground px-8 py-3.5 rounded-lg font-semibold hover:shadow-glow transition-shadow"
+              className="group relative overflow-hidden bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold shadow-elevated transition-transform hover:scale-105"
             >
-              Explore Packages
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <span className="relative flex items-center gap-2">Explore Packages →</span>
             </Link>
             <Link
               to="/about"
-              className="bg-primary-foreground/20 backdrop-blur text-primary-foreground border border-primary-foreground/30 px-8 py-3.5 rounded-lg font-semibold hover:bg-primary-foreground/30 transition-colors"
+              className="bg-background/10 backdrop-blur-md text-primary-foreground border border-primary-foreground/20 px-8 py-4 rounded-full font-bold hover:bg-background/20 transition-all hover:scale-105"
             >
               Learn More
             </Link>
