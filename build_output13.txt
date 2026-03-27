@@ -1,0 +1,21 @@
+
+> vite_react_shadcn_js@0.0.0 build
+> vite build
+
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 3 modules transformed.
+[31mx[39m Build failed in 99ms
+[31merror during build:
+[31m[@tailwindcss/vite:generate:build] Can't resolve 'tailwindcss' in 'D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\src'[31m
+file: [36mD:/OUR PRODUCTS/TRAVELS/singapore-malaysia-explorer-main/singapore-malaysia-explorer-main/src/index.css[31m
+    at finishWithoutResolve (D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\Resolver.js:587:18)
+    at D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\Resolver.js:679:14
+    at D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\Resolver.js:740:5
+    at eval (eval at create (D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\Resolver.js:740:5
+    at eval (eval at create (D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
+    at D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\Resolver.js:740:5
+    at eval (eval at create (D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at D:\OUR PRODUCTS\TRAVELS\singapore-malaysia-explorer-main\singapore-malaysia-explorer-main\node_modules\enhanced-resolve\lib\Resolver.js:740:5[39m
