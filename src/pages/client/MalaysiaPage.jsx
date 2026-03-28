@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import myHero from "@/components/assets/malaysia-hero.jpg";
-import myBatu from "@/components/assets/malaysia-batu.jpg";
-import myLangkawi from "@/components/assets/malaysia-langkawi.jpg";
-import streetFood from "@/components/assets/street-food.jpg";
+import myHero from "@/assets/malaysia-hero.jpg";
+import myBatu from "@/assets/malaysia-batu.jpg";
+import myLangkawi from "@/assets/malaysia-langkawi.jpg";
+import streetFood from "@/assets/street-food.jpg";
 import SectionHeading from "@/components/client/SectionHeading";
 import DestinationCard from "@/components/client/DestinationCard";
 
 const spots = [
-  { image: myBatu, title: "Batu Caves", location: "Selangor", rating: 4.7, price: "$5", link: "/packages" },
-  { image: myLangkawi, title: "Langkawi Island", location: "Kedah", rating: 4.9, price: "$50", link: "/packages" },
-  { image: streetFood, title: "Penang Food Trail", location: "Penang", rating: 4.8, price: "$15", link: "/packages" },
+  { image: myBatu, title: "Batu Caves", location: "Selangor", rating: 4.7, link: "/packages" },
+  { image: myLangkawi, title: "Langkawi Island", location: "Kedah", rating: 4.9, link: "/packages" },
+  { image: streetFood, title: "Penang Food Trail", location: "Penang", rating: 4.8, link: "/packages" },
 ];
 
 const MalaysiaPage = () => (

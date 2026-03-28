@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import sgHero from "@/components/assets/singapore-hero.jpg";
-import myHero from "@/components/assets/malaysia-hero.jpg";
-import sgMerlion from "@/components/assets/singapore-merlion.jpg";
-import myBatu from "@/components/assets/malaysia-batu.jpg";
-import sgGardens from "@/components/assets/singapore-gardens.jpg";
-import myLangkawi from "@/components/assets/malaysia-langkawi.jpg";
-import streetFood from "@/components/assets/street-food.jpg";
-import heroBeach from "@/components/assets/hero-beach.jpg";
+import galleryBg from "@/assets/gallery-bg.png";
+import sgHero from "@/assets/singapore-hero.jpg";
+import myHero from "@/assets/malaysia-hero.jpg";
+import sgMerlion from "@/assets/singapore-merlion.jpg";
+import myBatu from "@/assets/malaysia-batu.jpg";
+import sgGardens from "@/assets/singapore-gardens.jpg";
+import myLangkawi from "@/assets/malaysia-langkawi.jpg";
+import streetFood from "@/assets/street-food.jpg";
+import heroBeach from "@/assets/hero-beach.jpg";
 import SectionHeading from "@/components/client/SectionHeading";
 
 const allImages = [
@@ -29,10 +30,14 @@ const GalleryPage = () => {
 
   return (
     <div>
-      <section className="bg-gradient-hero text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold">Photo Gallery</h1>
-          <p className="mt-4 text-lg opacity-80">A visual journey through Southeast Asia.</p>
+      <section className="relative h-[50vh] min-h-[350px] flex items-center">
+        <img src={galleryBg} alt="Gallery" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-foreground/50" />
+        <div className="relative container mx-auto px-4 text-center">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">
+            Photo Gallery
+          </motion.h1>
+          <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg mx-auto">A visual journey through Southeast Asia.</p>
         </div>
       </section>
 

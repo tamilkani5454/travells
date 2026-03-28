@@ -6,7 +6,7 @@ import SectionHeading from "@/components/client/SectionHeading";
 const faqs = [
   { q: "What destinations do you cover?", a: "We specialize in Singapore and Malaysia, covering major cities, islands, highlands, and cultural sites across both countries." },
   { q: "How do I book a tour package?", a: "You can browse our packages page and click 'Book Now' on your preferred package. Alternatively, contact us directly for a customized itinerary." },
-  { q: "Are your prices per person or per group?", a: "Our listed prices are per person based on double-sharing. Group and solo traveler rates are available upon request." },
+  { q: "How are your tour packages priced?", a: "Prices are provided upon inquiry and are generally based on double-sharing per person. Group and solo traveler rates are available upon request." },
   { q: "What's included in the tour packages?", a: "Most packages include accommodation, airport transfers, guided tours, entrance fees, daily breakfast, and travel insurance." },
   { q: "Can I customize my itinerary?", a: "Absolutely! We love creating bespoke travel experiences. Contact us with your preferences and we'll craft the perfect trip." },
   { q: "What is your cancellation policy?", a: "Free cancellation up to 30 days before departure. 50% refund for cancellations 15-29 days prior. No refund for cancellations within 14 days." },

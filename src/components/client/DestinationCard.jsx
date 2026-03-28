@@ -22,9 +22,6 @@ const DestinationCard = ({ image, title, location, rating, price, link }) => (
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-xl text-foreground text-sm font-black px-4 py-1.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 isolate">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-tropical-coral to-tropical-gold">From {price}</span>
-        </div>
       </div>
     <div className="relative z-10 p-6 flex flex-col flex-1 bg-card/40 backdrop-blur-md">
       <h3 className="font-display text-2xl font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-tropical-coral group-hover:to-tropical-gold transition-all duration-300">{title}</h3>
@@ -40,7 +37,7 @@ const DestinationCard = ({ image, title, location, rating, price, link }) => (
           to={link}
           className="text-sm font-bold text-primary transition-colors flex items-center gap-1 group/link hover:text-tropical-coral"
         >
-          View Tour 
+          Book Now 
           <motion.span
             className="inline-block"
             animate={{ x: [0, 5, 0] }}

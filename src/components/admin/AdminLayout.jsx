@@ -107,20 +107,33 @@ const AdminLayout = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="sticky top-0 z-40 h-16 bg-card border-b border-border flex items-center px-4 lg:px-6 gap-4 shrink-0 transition-all duration-300">
-          {/* Mobile Toggle */}
-          <button onClick={() => setIsMobileOpen(true)} className="p-2 -ml-2 rounded-lg text-muted-foreground hover:bg-muted transition-colors lg:hidden">
-            <Menu className="h-5 w-5" />
-          </button>
+        <header className="sticky top-0 z-40 h-16 bg-card border-b border-border flex items-center justify-between px-4 lg:px-6 shrink-0 transition-all duration-300">
+          <div className="flex items-center gap-4">
+            {/* Mobile Toggle */}
+            <button onClick={() => setIsMobileOpen(true)} className="p-2 -ml-2 rounded-lg text-muted-foreground hover:bg-muted transition-colors lg:hidden">
+              <Menu className="h-5 w-5" />
+            </button>
 
-          {/* Desktop Toggle */}
-          <button onClick={() => setIsDesktopCollapsed(!isDesktopCollapsed)} className="hidden lg:block p-2 -ml-2 rounded-lg text-muted-foreground hover:bg-muted transition-colors">
-            <Menu className="h-5 w-5" />
-          </button>
+            {/* Desktop Toggle */}
+            <button onClick={() => setIsDesktopCollapsed(!isDesktopCollapsed)} className="hidden lg:block p-2 -ml-2 rounded-lg text-muted-foreground hover:bg-muted transition-colors">
+              <Menu className="h-5 w-5" />
+            </button>
 
-          <h2 className="font-display text-lg font-semibold text-foreground truncate">
-            {links.find((l) => l.path === location.pathname)?.label || "Admin"}
-          </h2>
+            <h2 className="font-display text-lg font-semibold text-foreground truncate">
+              {links.find((l) => l.path === location.pathname)?.label || "Admin"}
+            </h2>
+          </div>
+
+          {/* User Section */}
+          <div className="flex items-center gap-3">
+            <div className="hidden md:block text-right">
+              <p className="text-sm font-medium text-foreground">Admin User</p>
+              <p className="text-xs text-muted-foreground">admin@tropictrails.com</p>
+            </div>
+            <button className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold hover:bg-primary/20 transition-colors">
+              A
+            </button>
+          </div>
         </header>
 
         <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto">

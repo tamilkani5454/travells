@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import testimonialsBg from "@/assets/testimonials-bg.png";
 import SectionHeading from "@/components/client/SectionHeading";
 
 const testimonials = [
@@ -13,10 +14,14 @@ const testimonials = [
 
 const TestimonialsPage = () => (
   <div>
-    <section className="bg-gradient-coral text-primary-foreground py-20">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="font-display text-4xl md:text-5xl font-bold">Testimonials</h1>
-        <p className="mt-4 text-lg opacity-80">What our travelers say about us.</p>
+    <section className="relative h-[50vh] min-h-[350px] flex items-center">
+      <img src={testimonialsBg} alt="Testimonials" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-foreground/50" />
+      <div className="relative container mx-auto px-4 text-center">
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">
+          Testimonials
+        </motion.h1>
+        <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg mx-auto">What our travelers say about us.</p>
       </div>
     </section>
 

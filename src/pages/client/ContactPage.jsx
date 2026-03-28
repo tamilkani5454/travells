@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import contactBg from "@/assets/contact-bg.png";
 import SectionHeading from "@/components/client/SectionHeading";
 
 const ContactPage = () => {
@@ -16,10 +17,14 @@ const ContactPage = () => {
 
   return (
     <div>
-      <section className="bg-gradient-hero text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold">Contact Us</h1>
-          <p className="mt-4 text-lg opacity-80">Let's plan your dream trip together.</p>
+      <section className="relative h-[50vh] min-h-[350px] flex items-center">
+        <img src={contactBg} alt="Contact Us" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-foreground/50" />
+        <div className="relative container mx-auto px-4 text-center">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">
+            Contact Us
+          </motion.h1>
+          <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg mx-auto">Let's plan your dream trip together.</p>
         </div>
       </section>
 

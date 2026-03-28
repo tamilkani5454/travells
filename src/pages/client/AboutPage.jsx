@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, Award } from "lucide-react";
-import heroBeach from "@/components/assets/hero-beach.jpg";
+import heroBeach from "@/assets/hero-beach.jpg";
 import SectionHeading from "@/components/client/SectionHeading";
 
 const values = [

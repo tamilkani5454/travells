@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import sgHero from "@/components/assets/singapore-hero.jpg";
-import sgMerlion from "@/components/assets/singapore-merlion.jpg";
-import sgGardens from "@/components/assets/singapore-gardens.jpg";
+import sgHero from "@/assets/singapore-hero.jpg";
+import sgMerlion from "@/assets/singapore-merlion.jpg";
+import sgGardens from "@/assets/singapore-gardens.jpg";
 import SectionHeading from "@/components/client/SectionHeading";
 import DestinationCard from "@/components/client/DestinationCard";
 
 const spots = [
-  { image: sgMerlion, title: "Merlion Park", location: "Marina Bay", rating: 4.8, price: "$0", link: "/packages" },
-  { image: sgGardens, title: "Gardens by the Bay", location: "Bay South", rating: 4.9, price: "$28", link: "/packages" },
-  { image: sgHero, title: "Marina Bay Sands", location: "Bayfront", rating: 4.9, price: "$45", link: "/packages" },
+  { image: sgMerlion, title: "Merlion Park", location: "Marina Bay", rating: 4.8, link: "/packages" },
+  { image: sgGardens, title: "Gardens by the Bay", location: "Bay South", rating: 4.9, link: "/packages" },
+  { image: sgHero, title: "Marina Bay Sands", location: "Bayfront", rating: 4.9, link: "/packages" },
 ];
 
 const SingaporePage = () => (

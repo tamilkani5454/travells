@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Compass, Shield, Heart, Clock } from "lucide-react";
-import heroBeach from "@/components/assets/hero-beach.jpg";
-import sgHero from "@/components/assets/singapore-hero.jpg";
-import myHero from "@/components/assets/malaysia-hero.jpg";
-import sgMerlion from "@/components/assets/singapore-merlion.jpg";
-import myBatu from "@/components/assets/malaysia-batu.jpg";
-import sgGardens from "@/components/assets/singapore-gardens.jpg";
-import myLangkawi from "@/components/assets/malaysia-langkawi.jpg";
-import streetFood from "@/components/assets/street-food.jpg";
+import heroBeach from "@/assets/hero-beach.jpg";
+import sgHero from "@/assets/singapore-hero.jpg";
+import myHero from "@/assets/malaysia-hero.jpg";
+import sgMerlion from "@/assets/singapore-merlion.jpg";
+import myBatu from "@/assets/malaysia-batu.jpg";
+import sgGardens from "@/assets/singapore-gardens.jpg";
+import myLangkawi from "@/assets/malaysia-langkawi.jpg";
+import streetFood from "@/assets/street-food.jpg";
 import SectionHeading from "@/components/client/SectionHeading";
 import DestinationCard from "@/components/client/DestinationCard";
 
@@ -25,12 +25,12 @@ const stats = [
 ];
 
 const destinations = [
-  { image: sgMerlion, title: "Merlion Park", location: "Singapore", rating: 4.8, price: "$25", link: "/singapore" },
-  { image: sgGardens, title: "Gardens by the Bay", location: "Singapore", rating: 4.9, price: "$30", link: "/singapore" },
-  { image: myBatu, title: "Batu Caves", location: "Malaysia", rating: 4.7, price: "$15", link: "/malaysia" },
-  { image: myLangkawi, title: "Langkawi Island", location: "Malaysia", rating: 4.9, price: "$50", link: "/malaysia" },
-  { image: streetFood, title: "Street Food Tour", location: "Singapore & Malaysia", rating: 4.8, price: "$20", link: "/packages" },
-  { image: sgHero, title: "Marina Bay Sands", location: "Singapore", rating: 4.9, price: "$45", link: "/singapore" },
+  { image: sgMerlion, title: "Merlion Park", location: "Singapore", rating: 4.8, link: "/singapore" },
+  { image: sgGardens, title: "Gardens by the Bay", location: "Singapore", rating: 4.9, link: "/singapore" },
+  { image: myBatu, title: "Batu Caves", location: "Malaysia", rating: 4.7, link: "/malaysia" },
+  { image: myLangkawi, title: "Langkawi Island", location: "Malaysia", rating: 4.9, link: "/malaysia" },
+  { image: streetFood, title: "Street Food Tour", location: "Singapore & Malaysia", rating: 4.8, link: "/packages" },
+  { image: sgHero, title: "Marina Bay Sands", location: "Singapore", rating: 4.9, link: "/singapore" },
 ];
 
 const HomePage = () => (

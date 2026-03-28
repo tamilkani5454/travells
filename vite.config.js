@@ -8,9 +8,13 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  server: {
+    port: 5173,
+    host: "[IP_ADDRESS]",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}); 

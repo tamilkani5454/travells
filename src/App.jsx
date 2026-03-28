@@ -11,6 +11,7 @@ import SingaporePage from "@/pages/client/SingaporePage";
 import MalaysiaPage from "@/pages/client/MalaysiaPage";
 import PackagesPage from "@/pages/client/PackagesPage";
 import PackageDetailPage from "@/pages/client/PackageDetailPage";
+import CustomTourPage from "@/pages/client/CustomTourPage";
 import GalleryPage from "@/pages/client/GalleryPage";
 import TestimonialsPage from "@/pages/client/TestimonialsPage";
 import AboutPage from "@/pages/client/AboutPage";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/malaysia" element={<MalaysiaPage />} />
             <Route path="/packages" element={<PackagesPage />} />
             <Route path="/packages/:id" element={<PackageDetailPage />} />
+            <Route path="/custom-tour" element={<CustomTourPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/about" element={<AboutPage />} />

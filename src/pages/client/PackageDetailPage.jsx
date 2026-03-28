@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Clock, Users, Star, Check, ArrowLeft } from "lucide-react";
-import heroBeach from "@/components/assets/hero-beach.jpg";
+import heroBeach from "@/assets/hero-beach.jpg";
 
 const PackageDetailPage = () => {
   const { id } = useParams();
@@ -64,11 +64,6 @@ const PackageDetailPage = () => {
           {/* Sidebar */}
           <div>
             <div className="sticky top-24 rounded-xl shadow-elevated bg-card p-6">
-              <div className="text-center">
-                <span className="text-sm text-muted-foreground">Starting from</span>
-                <div className="text-4xl font-bold text-tropical-coral mt-1">$599</div>
-                <span className="text-sm text-muted-foreground">per person</span>
-              </div>
               <Link
                 to="/contact"
                 className="block mt-6 text-center bg-gradient-coral text-primary-foreground py-3 rounded-lg font-semibold hover:shadow-glow transition-shadow"

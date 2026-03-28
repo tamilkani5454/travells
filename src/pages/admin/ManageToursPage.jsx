@@ -2,12 +2,12 @@ import { useState } from "react";
 import { Plus, Edit, Trash2, Search } from "lucide-react";
 
 const initialTours = [
-  { id: 1, name: "Singapore City Explorer", country: "Singapore", price: "$599", duration: "4D/3N", status: "Active" },
-  { id: 2, name: "KL & Highlands Escape", country: "Malaysia", price: "$499", duration: "5D/4N", status: "Active" },
-  { id: 3, name: "Beach Paradise Combo", country: "Both", price: "$899", duration: "7D/6N", status: "Active" },
-  { id: 4, name: "Foodie Trail", country: "Both", price: "$299", duration: "3D/2N", status: "Draft" },
-  { id: 5, name: "Family Fun Package", country: "Both", price: "$1,199", duration: "6D/5N", status: "Active" },
-  { id: 6, name: "Adventure Seeker", country: "Malaysia", price: "$749", duration: "5D/4N", status: "Active" },
+  { id: 1, name: "Singapore City Explorer", country: "Singapore", duration: "4D/3N", status: "Active" },
+  { id: 2, name: "KL & Highlands Escape", country: "Malaysia", duration: "5D/4N", status: "Active" },
+  { id: 3, name: "Beach Paradise Combo", country: "Both", duration: "7D/6N", status: "Active" },
+  { id: 4, name: "Foodie Trail", country: "Both", duration: "3D/2N", status: "Draft" },
+  { id: 5, name: "Family Fun Package", country: "Both", duration: "6D/5N", status: "Active" },
+  { id: 6, name: "Adventure Seeker", country: "Malaysia", duration: "5D/4N", status: "Active" },
 ];
 
 const ManageToursPage = () => {
@@ -37,7 +37,7 @@ const ManageToursPage = () => {
           <table className="w-full text-sm">
             <thead className="bg-muted">
               <tr>
-                {["Name", "Country", "Price", "Duration", "Status", "Actions"].map((h) => (
+                {["Name", "Country", "Duration", "Status", "Actions"].map((h) => (
                   <th key={h} className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
@@ -47,7 +47,6 @@ const ManageToursPage = () => {
                 <tr key={t.id} className="hover:bg-muted/50 transition-colors">
                   <td className="px-6 py-4 font-medium text-foreground">{t.name}</td>
                   <td className="px-6 py-4 text-muted-foreground">{t.country}</td>
-                  <td className="px-6 py-4 font-semibold text-foreground">{t.price}</td>
                   <td className="px-6 py-4 text-muted-foreground">{t.duration}</td>
                   <td className="px-6 py-4">
                     <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${t.status === "Active" ? "bg-tropical-emerald/10 text-tropical-emerald" : "bg-muted text-muted-foreground"}`}>

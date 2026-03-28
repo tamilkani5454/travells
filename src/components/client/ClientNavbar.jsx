@@ -14,6 +14,7 @@ const navLinks = [
     ]
   },
   { label: "Packages", path: "/packages" },
+  { label: "Custom Tour", path: "/custom-tour" },
   { label: "Gallery", path: "/gallery" },
   { label: "Testimonials", path: "/testimonials" },
   { label: "About", path: "/about" },
@@ -91,10 +92,17 @@ const ClientNavbar = () => {
           })}
         </div>
 
-        {/* Mobile toggle */}
-        <button className="lg:hidden p-2" onClick={() => setOpen(!open)}>
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Right Actions */}
+        <div className="flex items-center gap-4">
+          <button className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold hover:bg-primary/20 transition-colors">
+            U
+          </button>
+
+          {/* Mobile toggle */}
+          <button className="lg:hidden p-2" onClick={() => setOpen(!open)}>
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
