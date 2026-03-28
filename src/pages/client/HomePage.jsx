@@ -74,10 +74,13 @@ const HomePage = () => (
           <div className="flex flex-wrap gap-5 mt-10">
             <Link
               to="/packages"
-              className="group relative overflow-hidden bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold shadow-elevated transition-transform hover:scale-105"
+              className="group relative overflow-hidden bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-[0_0_30px_hsl(175,70%,35%,0.5)] hover:shadow-[0_0_50px_hsl(175,70%,35%,0.8)] border border-primary-foreground/30"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <span className="relative flex items-center gap-2">Explore Packages →</span>
+              <span className="relative flex items-center gap-2">
+                Explore Packages 
+                <motion.span animate={{x:[0,5,0]}} transition={{duration:1.5, repeat:Infinity}}>→</motion.span>
+              </span>
             </Link>
             <Link
               to="/about"
@@ -103,9 +106,14 @@ const HomePage = () => (
             variants={fadeUp}
             className="text-center"
           >
-            <s.icon className="h-8 w-8 mx-auto mb-2 opacity-80" />
-            <div className="text-3xl font-bold">{s.value}</div>
-            <div className="text-sm opacity-70">{s.label}</div>
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <s.icon className="h-10 w-10 mx-auto mb-3 text-tropical-gold drop-shadow-md" />
+            </motion.div>
+            <div className="text-4xl font-black mb-1">{s.value}</div>
+            <div className="text-sm font-semibold opacity-80 uppercase tracking-wider">{s.label}</div>
           </motion.div>
         ))}
       </div>
@@ -154,11 +162,11 @@ const HomePage = () => (
               variants={fadeUp}
             >
               <Link to={c.path} className="group relative block h-80 rounded-2xl overflow-hidden shadow-elevated">
-                <img src={c.img} alt={c.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <h3 className="font-display text-3xl font-bold text-primary-foreground">{c.name}</h3>
-                  <p className="text-primary-foreground/80 mt-2">{c.desc}</p>
+                <img src={c.img} alt={c.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="font-display text-4xl font-bold text-primary-foreground mb-2 group-hover:text-tropical-gold transition-colors">{c.name}</h3>
+                  <p className="text-primary-foreground/90 font-medium">{c.desc}</p>
                 </div>
               </Link>
             </motion.div>

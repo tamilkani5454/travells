@@ -49,8 +49,8 @@
   --image-gradient-ocean: linear-gradient(180deg, hsl(200, 90%, 60%, 0.15), hsl(175, 70%, 35%, 0.05));
   --image-gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(40, 20%, 98%));
 
-  --shadow-card: 0 8px 30px hsl(220, 30%, 12%, 0.04), 0 4px 10px hsl(220, 30%, 12%, 0.02);
-  --shadow-elevated: 0 20px 50px hsl(175, 70%, 35%, 0.1), 0 10px 20px hsl(220, 30%, 12%, 0.05);
+  --shadow-card: 0 8px 30px hsl(175, 70%, 35%, 0.06), 0 4px 10px hsl(175, 70%, 35%, 0.03);
+  --shadow-elevated: 0 20px 50px hsl(175, 70%, 35%, 0.15), 0 10px 20px hsl(175, 70%, 35%, 0.08);
   --shadow-glow: 0 0 40px hsl(175, 70%, 35%, 0.25);
   
   --font-sans: 'Inter', sans-serif;

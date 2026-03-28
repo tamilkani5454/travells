@@ -28,8 +28,13 @@ const ClientNavbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold text-primary">
-          <Plane className="h-6 w-6 text-tropical-coral" />
+        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold text-primary group">
+          <motion.div
+            whileHover={{ rotate: 180, scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          >
+            <Plane className="h-6 w-6 text-tropical-coral group-hover:text-tropical-gold transition-colors duration-300" />
+          </motion.div>
           TropicTrails
         </Link>
 
@@ -67,13 +72,20 @@ const ClientNavbar = () => {
               <Link
                 key={l.path}
                 to={l.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative px-4 py-2 rounded-full text-sm font-bold transition-colors ${
                   location.pathname === l.path
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground hover:bg-muted"
+                    ? "text-primary-foreground"
+                    : "text-foreground hover:text-primary"
                 }`}
               >
-                {l.label}
+                {location.pathname === l.path && (
+                  <motion.div
+                    layoutId="desktop-active-nav"
+                    className="absolute inset-0 bg-primary rounded-full -z-10 shadow-glow"
+                    transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  />
+                )}
+                <span className="relative z-10">{l.label}</span>
               </Link>
             );
           })}
