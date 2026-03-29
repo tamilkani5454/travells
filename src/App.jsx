@@ -21,6 +21,7 @@ import TermsConditionPage from "@/pages/client/TermsConditionPage";
 // Admin layout & pages
 import AdminLayout from "@/components/admin/AdminLayout";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
+import AdminLoginPage from "@/pages/admin/AdminLoginPage";
 import ManageToursPage from "@/pages/admin/ManageToursPage";
 import ManageCountriesPage from "@/pages/admin/ManageCountriesPage";
 import ManageBookingsPage from "@/pages/admin/ManageBookingsPage";
@@ -56,6 +57,7 @@ const App = () => (
         </Route>
 
         {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/tours" element={<ManageToursPage />} />

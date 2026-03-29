@@ -91,15 +91,15 @@ const AdminLayout = () => {
 
         <div className="p-4 border-t border-primary-foreground/10 shrink-0">
           <Link
-            to="/"
-            title={isDesktopCollapsed ? "Back to Site" : ""}
+            to="/admin/login"
+            title={isDesktopCollapsed ? "Sign Out" : ""}
             className={`flex items-center gap-3 text-sm font-medium text-primary-foreground/70 hover:text-white transition-colors ${
               isDesktopCollapsed ? "lg:justify-center" : ""
             }`}
           >
             <LogOut className="h-5 w-5 flex-shrink-0" />
             <span className={`whitespace-nowrap transition-opacity duration-200 ${isDesktopCollapsed ? "lg:hidden lg:opacity-0" : "opacity-100"}`}>
-              Back to Site
+              Sign Out
             </span>
           </Link>
         </div>
