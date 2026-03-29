@@ -85,7 +85,7 @@ const HomePage = () => {
               </Link>
               <Link
                 to="/about"
-                className="bg-background/10 backdrop-blur-md text-primary-foreground border border-primary-foreground/20 px-8 py-4 rounded-full font-bold hover:bg-background/20 transition-all hover:scale-105"
+                className="flex items-center justify-center bg-background/10 backdrop-blur-md text-primary-foreground border border-primary-foreground/20 px-8 py-4 rounded-full font-bold hover:bg-background/20 transition-all hover:scale-105"
               >
                 Learn More
               </Link>

@@ -1,14 +1,14 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  LayoutDashboard, Map, CalendarCheck, Users, Settings, Menu, X, Plane, LogOut,
+  LayoutDashboard, Map, MapPin, CalendarCheck, Users, Settings, Menu, X, Plane, LogOut,
 } from "lucide-react";
 
 const links = [
   { label: "Dashboard", path: "/admin", icon: LayoutDashboard },
   { label: "Manage Tours", path: "/admin/tours", icon: Map },
+  { label: "Manage Destinations", path: "/admin/countries", icon: MapPin },
   { label: "Bookings", path: "/admin/bookings", icon: CalendarCheck },
-  { label: "Users", path: "/admin/users", icon: Users },
   { label: "Settings", path: "/admin/settings", icon: Settings },
 ];
 

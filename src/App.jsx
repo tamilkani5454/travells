@@ -22,8 +22,8 @@ import TermsConditionPage from "@/pages/client/TermsConditionPage";
 import AdminLayout from "@/components/admin/AdminLayout";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import ManageToursPage from "@/pages/admin/ManageToursPage";
+import ManageCountriesPage from "@/pages/admin/ManageCountriesPage";
 import ManageBookingsPage from "@/pages/admin/ManageBookingsPage";
-import ManageUsersPage from "@/pages/admin/ManageUsersPage";
 import AdminSettingsPage from "@/pages/admin/AdminSettingsPage";
 
 import NotFound from "./pages/NotFound";
@@ -59,8 +59,8 @@ const App = () => (
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/tours" element={<ManageToursPage />} />
+          <Route path="/admin/countries" element={<ManageCountriesPage />} />
           <Route path="/admin/bookings" element={<ManageBookingsPage />} />
-          <Route path="/admin/users" element={<ManageUsersPage />} />
           <Route path="/admin/settings" element={<AdminSettingsPage />} />
         </Route>
 

@@ -100,11 +100,11 @@ const CustomTourPage = () => {
                       Adults <span className="text-xs text-muted-foreground font-normal">(13+ yrs)</span>
                     </label>
                     <div className="flex items-center justify-between px-4 py-1.5 rounded-xl border border-border bg-background text-foreground h-[50px]">
-                      <button type="button" onClick={() => setAdults(Math.max(1, adults - 1))} className="p-2 rounded-lg hover:bg-muted transition-colors">
+                      <button type="button" onClick={() => setAdults(Math.max(1, adults - 1))} className="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">
                         <Minus className="h-4 w-4" />
                       </button>
                       <span className="font-semibold w-8 text-center">{adults}</span>
-                      <button type="button" onClick={() => setAdults(adults + 1)} className="p-2 rounded-lg hover:bg-muted transition-colors">
+                      <button type="button" onClick={() => setAdults(adults + 1)} className="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">
                         <Plus className="h-4 w-4" />
                       </button>
                     </div>
@@ -114,11 +114,11 @@ const CustomTourPage = () => {
                       Children <span className="text-xs text-muted-foreground font-normal">(&lt; 12 yrs)</span>
                     </label>
                     <div className="flex items-center justify-between px-4 py-1.5 rounded-xl border border-border bg-background text-foreground h-[50px]">
-                      <button type="button" onClick={() => setChildren(Math.max(0, children - 1))} className="p-2 rounded-lg hover:bg-muted transition-colors">
+                      <button type="button" onClick={() => setChildren(Math.max(0, children - 1))} className="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">
                         <Minus className="h-4 w-4" />
                       </button>
                       <span className="font-semibold w-8 text-center">{children}</span>
-                      <button type="button" onClick={() => setChildren(children + 1)} className="p-2 rounded-lg hover:bg-muted transition-colors">
+                      <button type="button" onClick={() => setChildren(children + 1)} className="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">
                         <Plus className="h-4 w-4" />
                       </button>
                     </div>

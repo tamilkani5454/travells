@@ -4,19 +4,25 @@ import { Clock, Users, Star, Check, ArrowLeft, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppContext } from "@/context/context";
 import heroBeach from "@/assets/hero-beach.jpg";
+import NotFound from "@/pages/NotFound";
 
 const PackageDetailPage = () => {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { packages } = useContext(AppContext);
   
-  // Look up the package dynamically if possible, else fallback
+  // Look up the package dynamically
   const pkg = packages?.find(p => p.id === Number(id)) || null;
-  const displayTitle = pkg ? pkg.title : `Package #${id}`;
-  const displayDays = pkg ? pkg.days : "5 Days / 4 Nights";
-  const displayPeople = pkg ? pkg.people : "2-6 People";
-  const displayRating = pkg ? pkg.rating : "4.9";
-  const displayImg = pkg ? pkg.image : heroBeach;
+
+  if (!pkg) {
+    return <NotFound />;
+  }
+
+  const displayTitle = pkg.title;
+  const displayDays = pkg.days;
+  const displayPeople = pkg.people;
+  const displayRating = pkg.rating;
+  const displayImg = pkg.image || heroBeach;
   
   return (
     <div>
