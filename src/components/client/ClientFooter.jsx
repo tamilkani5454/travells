@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Plane, Mail, Phone, MapPin } from "lucide-react";
+import { Plane, Mail, Phone, MapPin, Heart } from "lucide-react";
 
 const ClientFooter = () => (
   <footer className="bg-foreground text-primary-foreground">
@@ -72,9 +72,21 @@ const ClientFooter = () => (
         </div>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between text-base text-primary-foreground/50 font-medium">
-        <p>© 2026 TropicTrails. All rights reserved.</p>
-        <div className="flex gap-6 mt-4 md:mt-0">
+      <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-6 text-base text-primary-foreground/50 font-medium">
+        <div className="md:flex-1 md:text-left text-center">
+          <p>© 2026 TropicTrails. All rights reserved.</p>
+        </div>
+        
+        <div className="flex items-center justify-center gap-1.5 text-sm md:flex-1 text-center">
+          <span>Crafted with</span>
+          <Heart className="h-4 w-4 text-tropical-coral fill-tropical-coral animate-pulse" /> 
+          <span>by</span>
+          <a href="https://www.zentroinfotech.com" target="_blank" rel="noopener noreferrer" className="hover:text-tropical-gold transition-colors font-semibold text-primary-foreground/80 hover:text-primary-foreground ml-1">
+            Zentro Infotech
+          </a>
+        </div>
+
+        <div className="flex gap-6 justify-center md:justify-end md:flex-1 mt-2 md:mt-0">
           <Link to="/privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
         </div>

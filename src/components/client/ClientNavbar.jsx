@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Plane, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { AppContext } from "@/context/context";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { 
-    label: "Countries", 
+  {
+    label: "Countries",
     path: "#",
     children: [
       { label: "Singapore", path: "/singapore" },
@@ -25,7 +26,28 @@ const ClientNavbar = () => {
   const [open, setOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const location = useLocation();
+  const { packages, countries } = useContext(AppContext)
+  const [country, setCountry] = useState([])
+  useEffect(() => {
+    const country = countries.map(item => item.country)
+    setCountry([...new Set(country.filter(Boolean))])
+  }, [countries])
 
+  const displayLinks = navLinks.map((link) => {
+    if (link.label === "Countries") {
+      return {
+        ...link,
+        children: country.map((c) => {
+          const lower = c.toLowerCase();
+          return {
+            label: c,
+            path: `/country/${lower}`,
+          };
+        }),
+      };
+    }
+    return link;
+  });
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
@@ -41,7 +63,7 @@ const ClientNavbar = () => {
 
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((l) => {
+          {displayLinks.map((l) => {
             if (l.children) {
               return (
                 <div key={l.label} className="relative group">
@@ -55,11 +77,10 @@ const ClientNavbar = () => {
                         <Link
                           key={child.path}
                           to={child.path}
-                          className={`px-4 py-2 text-sm font-medium transition-colors ${
-                            location.pathname === child.path
+                          className={`px-4 py-2 text-sm font-medium transition-colors ${location.pathname === child.path
                               ? "text-primary bg-primary/10"
                               : "text-foreground hover:bg-muted"
-                          }`}
+                            }`}
                         >
                           {child.label}
                         </Link>
@@ -73,11 +94,10 @@ const ClientNavbar = () => {
               <Link
                 key={l.path}
                 to={l.path}
-                className={`relative px-4 py-2 rounded-full text-sm font-bold transition-colors ${
-                  location.pathname === l.path
+                className={`relative px-4 py-2 rounded-full text-sm font-bold transition-colors ${location.pathname === l.path
                     ? "text-primary-foreground"
                     : "text-foreground hover:text-primary"
-                }`}
+                  }`}
               >
                 {location.pathname === l.path && (
                   <motion.div
@@ -115,7 +135,7 @@ const ClientNavbar = () => {
             className="lg:hidden bg-card border-b border-border overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-1">
-              {navLinks.map((l) => {
+              {displayLinks.map((l) => {
                 if (l.children) {
                   return (
                     <div key={l.label} className="flex flex-col">
@@ -142,11 +162,10 @@ const ClientNavbar = () => {
                                   setOpen(false);
                                   setMobileDropdownOpen(false);
                                 }}
-                                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors mt-1 ${
-                                  location.pathname === child.path
+                                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors mt-1 ${location.pathname === child.path
                                     ? "bg-primary text-primary-foreground"
                                     : "text-foreground hover:bg-muted"
-                                }`}
+                                  }`}
                               >
                                 {child.label}
                               </Link>
@@ -162,11 +181,10 @@ const ClientNavbar = () => {
                     key={l.path}
                     to={l.path}
                     onClick={() => setOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      location.pathname === l.path
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${location.pathname === l.path
                         ? "bg-primary text-primary-foreground"
                         : "text-foreground hover:bg-muted"
-                    }`}
+                      }`}
                   >
                     {l.label}
                   </Link>
