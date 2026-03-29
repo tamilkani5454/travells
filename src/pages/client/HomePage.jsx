@@ -30,7 +30,7 @@ const stats = [
 
 
 const HomePage = () => {
-  const { packages } = useContext(AppContext)
+  const { packages, countries } = useContext(AppContext)
   // const popularPkg=packages.filter(p=>p.isPopular) 
   const popularPkg = packages.slice(0, 6)
 
@@ -139,27 +139,24 @@ const HomePage = () => {
         <div className="container mx-auto px-4">
           <SectionHeading subtitle="Choose Your Adventure" title="Explore by Country" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { img: sgHero, name: "Singapore", desc: "A dazzling city-state where futuristic architecture meets rich heritage.", path: "/singapore" },
-              { img: myHero, name: "Malaysia", desc: "From rainforests to stunning islands and vibrant cities.", path: "/malaysia" },
-            ].map((c, i) => (
-              <motion.div
-                key={c.name}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-              >
-                <Link to={c.path} className="group relative block h-80 rounded-2xl overflow-hidden shadow-elevated">
-                  <img src={c.img} alt={c.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="font-display text-4xl font-bold text-primary-foreground mb-2 group-hover:text-tropical-gold transition-colors">{c.name}</h3>
-                    <p className="text-primary-foreground/90 font-medium">{c.desc}</p>
-                  </div>
-                </Link>
-              </motion.div>
+            {countries.map((c, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+            >
+              <Link to={`country/${c.country.toLowerCase()}`} className="group relative block h-80 rounded-2xl overflow-hidden shadow-elevated">
+                <img src={c.img} alt={c.country} loading="lazy" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="font-display text-4xl font-bold text-primary-foreground mb-2 group-hover:text-tropical-gold transition-colors">{c.country}</h3>
+                  <p className="text-primary-foreground/90 font-medium">{c.title}</p>
+                </div>
+              </Link>
+            </motion.div>
             ))}
           </div>
         </div>

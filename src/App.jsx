@@ -15,6 +15,8 @@ import TestimonialsPage from "@/pages/client/TestimonialsPage";
 import AboutPage from "@/pages/client/AboutPage";
 import ContactPage from "@/pages/client/ContactPage";
 import FAQPage from "@/pages/client/FAQPage";
+import PrivacyPolicyPage from "@/pages/client/PrivacyPolicyPage";
+import TermsConditionPage from "@/pages/client/TermsConditionPage";
 
 // Admin layout & pages
 import AdminLayout from "@/components/admin/AdminLayout";
@@ -49,6 +51,8 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsConditionPage />} />
         </Route>
 
         {/* Admin Routes */}

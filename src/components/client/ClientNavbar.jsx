@@ -114,10 +114,6 @@ const ClientNavbar = () => {
 
         {/* Right Actions */}
         <div className="flex items-center gap-4">
-          <button className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold hover:bg-primary/20 transition-colors">
-            U
-          </button>
-
           {/* Mobile toggle */}
           <button className="lg:hidden p-2" onClick={() => setOpen(!open)}>
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
